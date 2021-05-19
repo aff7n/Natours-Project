@@ -1,0 +1,92 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    /* font-size: 15px; */
+    line-height: 1.7;
+    color: $color-text-dark;
+}
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main{
+        display: block;
+        font-size: 5rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+    
+        animation: moveInleft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        /* animation-delay: 2s;
+        animation-iteration-count: 3;
+        */
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
+    
+    }
+    
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: $def-font-size;
+    
+        animation: moveInright 1s ease-out;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
+    }
+}
+
+.heading-secondary{
+    font-size: 3.5rem;       // 35px
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    background: linear-gradient(to Right, $color-primary, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+
+    &:hover {
+        transform: skewY(2deg) skewX(10deg) scale(1.1);
+
+        // .5rem= x-axis, 1rem= y-axis, 2rem= shadow-blur
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .15);
+        cursor:default;
+    }
+}
+
+.heading-tertiary {
+    font-size: $def-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $def-font-size;
+
+    // last paragraph element will not have margin-bottom
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
